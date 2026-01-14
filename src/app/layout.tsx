@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${googleSansFlex.variable} antialiased bg-[#eeede4]`}>
+      <body className={`${googleSansFlex.variable} antialiased bg-[#eeede4] overflow-hidden`}>
         <AOSProvider />
         {children}
       </body>
