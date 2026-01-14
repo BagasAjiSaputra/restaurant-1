@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Google_Sans_Flex } from "next/font/google";
 import "./globals.css";
+import AOSProvider from "./providers/aos";
 
 const googleSansFlex = Google_Sans_Flex({
   subsets: ["latin"],
@@ -22,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${googleSansFlex.variable} antialiased bg-[#eeede4]`}>
+        <AOSProvider />
         {children}
       </body>
     </html>
