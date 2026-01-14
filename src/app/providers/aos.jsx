@@ -6,10 +6,11 @@ import AOS from "aos";
 export default function AOSProvider() {
   useEffect(() => {
     AOS.init({
-      duration: 800,
+      duration: 500,
       easing: "ease-out-cubic",
-      once: true, // animasi cuma sekali
+      once: true,
       offset: 80,
+      // disable: true,
     });
   }, []);
 
