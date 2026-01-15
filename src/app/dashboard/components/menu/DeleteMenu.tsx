@@ -1,0 +1,47 @@
+"use client";
+
+import { deleteMenu } from "@/actions/menu/delete";
+import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+
+export function DeleteMenu({
+  id,
+  image,
+}: {
+  id: string;
+  image: string | null;
+}) {
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button size="sm" variant="destructive">
+          Delete
+        </Button>
+      </DialogTrigger>
+
+      <DialogContent className="sm:max-w-[400px]">
+        <DialogHeader>
+          <DialogTitle>Hapus Menu?</DialogTitle>
+        </DialogHeader>
+
+        <form action={deleteMenu}>
+          <input type="hidden" name="id" value={id} />
+          <input type="hidden" name="image" value={image ?? ""} />
+
+          <DialogFooter className="mt-4">
+            <Button type="submit" variant="destructive">
+              Ya, Hapus
+            </Button>
+          </DialogFooter>
+        </form>
+      </DialogContent>
+    </Dialog>
+  );
+}

@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Navbar from "@/components/navbar/navbar"
 
 export default function HomePage() {
 
@@ -7,17 +8,20 @@ export default function HomePage() {
       <div className="flex justify-center">
         <h1 data-aos="fade-up" className="text-[13vw] leading-none mt-2">FJORDSMAKEN</h1>
       </div>
-      <div className="sticky top-0 z-99">
-          <div data-aos="fade-up" data-aos-delay="100" className="flex justify-evenly w-full">
-            <Link href={"/menu"} className="bg-black w-full px-4 py-2 flex justify-center items-center hover:bg-[#eeede4] hover:text-black text-white transition ease-in-out delay-150">Menu</Link>
-            <Link href={"/about"} className="bg-black w-full px-4 py-2 flex justify-center items-center hover:bg-[#eeede4] hover:text-black text-white transition ease-in-out delay-150">About</Link>
-            <Link href={"/contact"} className="bg-black w-full px-4 py-2 flex justify-center items-center hover:bg-[#eeede4] hover:text-black text-white transition ease-in-out delay-150">Contact</Link>
-          </div>
-      </div>
+
+      <Navbar />
 
       <section className="min-h-screen flex flex-col overflow-hidden">
-        {/* Top Bar */}
-        <div className="sticky top-0 flex-col md:flex-row justify-center flex-wrap md:justify-between items-center px-6 md:px-10 xl:px-12 py-5 text-xs md:text-md gap-y-2">
+
+        {/* Image Section */}
+        <div data-aos="fade-up" className="px-6 md:px-10 xl:px-12 pb-10 py-4 md:py-8">
+          <div className="overflow-hidden rounded-sm">
+            <img
+              src="/asset/bg-2.jpg"
+              alt="Restaurant Interior"
+              className="w-full h-[40vh] md:h-[60vh] xl:h-[80vh] object-cover"
+            />
+          </div>
         </div>
 
         {/* Text Section */}
@@ -33,7 +37,7 @@ export default function HomePage() {
           </div>
 
           {/* Description */}
-          <div data-aos="fade-left" className="md:col-span-4 md:col-start-9 text-sm leading-relaxed text-neutral-700">
+          <div data-aos="fade-left" className="md:col-span-4 md:col-start-9 text-md leading-relaxed text-neutral-700">
             Indulge in traditional dishes made with the freshest locally
             sourced ingredients, expertly prepared to showcase the rich
             culinary heritage of Norway.
@@ -44,21 +48,11 @@ export default function HomePage() {
             <span className="rotate-90 text-xs tracking-widest">
               SEE MENU
             </span>
-            <div className="h-20 w-px bg-neutral-800" />
+            <div className="h-20 w-px bg-neutral-800 mt-3" />
             <span className="text-lg">↓</span>
           </div>
         </div>
 
-        {/* Image Section */}
-        <div data-aos="fade-up" className="px-6 md:px-10 xl:px-12 pb-10">
-          <div className="overflow-hidden rounded-sm">
-            <img
-              src="/asset/bg-2.jpg"
-              alt="Restaurant Interior"
-              className="w-full h-[40vh] md:h-[60vh] xl:h-[80vh] object-cover"
-            />
-          </div>
-        </div>
       </section>
 
 
@@ -100,9 +94,9 @@ export default function HomePage() {
               and family.
             </p>
 
-            <button data-aos="fade-left" className="w-fit px-6 py-2 rounded-full border border-neutral-800 text-sm hover:bg-neutral-800 hover:text-white transition">
+            <Link href={"/contact"} data-aos="fade-left" className="transition ease-in-out w-fit px-6 py-2 rounded-full border border-neutral-800 text-sm hover:bg-neutral-800 hover:text-white transition">
               Reserve a table
-            </button>
+            </Link>
 
             {/* Bottom images */}
             <div data-aos="fade-up" className="grid grid-cols-2 md:grid-cols-3 gap-4 pt-6">
