@@ -43,7 +43,7 @@ export function UpdateMenu({ menu }: { menu: Menu }) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button size="sm" variant="outline">
+        <Button size="sm" className="bg-yellow-200 text-yellow-700 hover:bg-yellow-300 hover:text-yellow-700">
           Edit
         </Button>
       </DialogTrigger>
@@ -66,25 +66,27 @@ export function UpdateMenu({ menu }: { menu: Menu }) {
 
           <div className="space-y-3">
             <div>
-              <Label>Nama Menu</Label>
-              <Input
+              <Label>Menu Name</Label>
+              <input
                 name="title"
                 defaultValue={menu.title ?? ""}
+                className="w-full mt-2 border-b border-gray-300 py-2 text-sm focus:outline-none focus:border-black"
                 required
               />
             </div>
 
             <div>
-              <Label>Deskripsi</Label>
-              <Input name="desc" defaultValue={menu.desc ?? ""} />
+              <Label>Description</Label>
+              <input name="desc" defaultValue={menu.desc ?? ""} className="w-full mt-2 border-b border-gray-300 py-2 text-sm focus:outline-none focus:border-black"/>
             </div>
 
             <div>
-              <Label>Tanggal</Label>
-              <Input
+              <Label>Date</Label>
+              <input
                 type="date"
                 name="date"
                 defaultValue={menu.date ?? ""}
+                className="w-full mt-2 border-b border-gray-300 py-2 text-sm focus:outline-none focus:border-black"
               />
             </div>
 
@@ -97,7 +99,7 @@ export function UpdateMenu({ menu }: { menu: Menu }) {
                 onChange={(e) =>
                   setTag(e.target.value as "Dish" | "Drink" | "Soup")
                 }
-                className="w-full rounded-md border px-3 py-2 text-sm"
+                className="w-full mt-2 border-b border-gray-300 py-2 text-sm focus:outline-none focus:border-black"
               >
                 <option value="Dish">Dish</option>
                 <option value="Drink">Drink</option>
@@ -112,20 +114,22 @@ export function UpdateMenu({ menu }: { menu: Menu }) {
             </div> */}
 
             <div>
-              <Label>Harga</Label>
-              <Input
+              <Label>Price</Label>
+              <input
                 type="number"
                 name="price"
                 defaultValue={menu.price ?? 0}
+                className="w-full mt-2 border-b border-gray-300 py-2 text-sm focus:outline-none focus:border-black"
               />
             </div>
 
             <div>
-              <Label>Ganti Gambar</Label>
-              <Input
+              <Label>Change Image</Label>
+              <input
                 type="file"
                 name="image"
                 accept="image/*"
+                className="w-full mt-2 border-b border-gray-300 py-2 text-sm focus:outline-none focus:border-black"
               />
             </div>
           </div>
@@ -133,10 +137,10 @@ export function UpdateMenu({ menu }: { menu: Menu }) {
           <DialogFooter>
             <DialogClose asChild>
               <Button type="button" variant="outline">
-                Batal
+                Cancel
               </Button>
             </DialogClose>
-            <Button type="submit">Simpan</Button>
+            <Button type="submit" className="bg-yellow-200 text-yellow-700 hover:bg-yellow-300">Update</Button>
           </DialogFooter>
         </form>
       </DialogContent>

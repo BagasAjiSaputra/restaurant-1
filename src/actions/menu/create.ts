@@ -18,8 +18,16 @@ export async function createMenu(formData: FormData) {
   const title = formData.get("title") as string;
   const desc = formData.get("desc") as string;
   const date = formData.get("date") as string;
+
+    const TAG_COLOR_MAP: Record<string, string> = {
+    Dish: "bg-yellow-200 text-yellow-700",
+    Drink: "bg-pink-200 text-pink-700",
+    Soup: "bg-blue-200 text-blue-700",
+  };
+
   const tag = formData.get("tag") as string;
-  const color = formData.get("color") as string;
+  const color = TAG_COLOR_MAP[tag];
+  
   const price = Number(formData.get("price"));
   const imageFile = formData.get("image") as File;
 

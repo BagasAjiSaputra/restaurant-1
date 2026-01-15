@@ -16,6 +16,7 @@ import {
     BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { useMenu } from "@/hooks/menu";
+// import { useState, useEffect } from "react";
 
 
 export default function MenuPage() {
@@ -24,6 +25,26 @@ export default function MenuPage() {
 
     // if (loading) return <LoadingLottie/>;
     // if (error) return <p>{error}</p>;
+
+    // Test Lottie 2 detik
+      // State untuk kontrol preview Lottie 2 detik
+//   const [showPreview, setShowPreview] = useState(true);
+
+//   useEffect(() => {
+//     const timer = setTimeout(() => {
+//       setShowPreview(false); 
+//     }, 2000);
+
+//     return () => clearTimeout(timer);
+//   }, []);
+
+//   if (showPreview) {
+//     return (
+//       <div className="flex items-center justify-center min-h-screen">
+//         <LoadingLottie />
+//       </div>
+//     );
+//   }
 
     
     return (

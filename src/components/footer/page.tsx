@@ -52,6 +52,8 @@ export default function Footer() {
                                 <br />
                                 10:00 AM – 10:00 PM
                             </li>
+
+                            <Link href={"/login"} className="hover:bg-orange-500 hover:text-white px-4 py-2 transition ease-in-out">Login</Link>
                         </ul>
                     </div>
 

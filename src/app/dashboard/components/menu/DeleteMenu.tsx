@@ -21,14 +21,14 @@ export function DeleteMenu({
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button size="sm" variant="destructive">
+        <Button size="sm" variant="destructive" className="bg-red-200 text-red-700 hover:bg-red-300">
           Delete
         </Button>
       </DialogTrigger>
 
       <DialogContent className="sm:max-w-[400px]">
         <DialogHeader>
-          <DialogTitle>Hapus Menu?</DialogTitle>
+          <DialogTitle>Delete Menu?</DialogTitle>
         </DialogHeader>
 
         <form action={deleteMenu}>
@@ -36,8 +36,8 @@ export function DeleteMenu({
           <input type="hidden" name="image" value={image ?? ""} />
 
           <DialogFooter className="mt-4">
-            <Button type="submit" variant="destructive">
-              Ya, Hapus
+            <Button type="submit" variant="destructive" className="text-white">
+              Yes, Delete
             </Button>
           </DialogFooter>
         </form>
