@@ -37,11 +37,11 @@ export default function Footer() {
                             </li>
                             <li className="flex items-start gap-3">
                                 <FaPhoneAlt className="mt-1 text-orange-500" />
-                                <span>+62 812 3456 7890</span>
+                                <span>+1 812 537-3546</span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <FaEnvelope className="mt-1 text-orange-500" />
-                                <span>hello@fjordsmaken.com</span>
+                                <span>fjordsmaken@gmail.com</span>
                             </li>
                             <li className="pt-2">
                                 <span className="font-medium text-white">
@@ -114,7 +114,7 @@ export default function Footer() {
                 {/* Bottom */}
                 <div className="flex flex-col items-center justify-between gap-4 text-sm text-neutral-500 md:flex-row">
                     <p>
-                        © {new Date().getFullYear()} RestoKita. All rights reserved.
+                        © {new Date().getFullYear()} Fjordsmaken. All rights reserved.
                     </p>
 
                     <div className="flex gap-4">

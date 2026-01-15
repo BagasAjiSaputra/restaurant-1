@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "src/app/providers/aos.jsx", "src/app/dashboard/components/menu/UpdateMenu.tsx"  ],
+, "src/app/providers/aos.jsx", "src/app/dashboard/components/menu/UpdateMenu.tsx", "src/components/atom/icon.jsx"  ],
   "exclude": ["node_modules"]
 }

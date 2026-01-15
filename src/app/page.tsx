@@ -1,5 +1,6 @@
 import Link from "next/link"
 import Navbar from "@/components/navbar/navbar"
+import PotatoLottie from "@/components/loading/potato/potato"
 
 export default function HomePage() {
 
@@ -41,6 +42,7 @@ export default function HomePage() {
             Indulge in traditional dishes made with the freshest locally
             sourced ingredients, expertly prepared to showcase the rich
             culinary heritage of Norway.
+            <PotatoLottie/>
           </div>
 
           {/* SEE MENU – hanya desktop */}
@@ -101,7 +103,7 @@ export default function HomePage() {
             {/* Bottom images */}
             <div data-aos="fade-up" className="grid grid-cols-2 md:grid-cols-3 gap-4 pt-6">
               <img
-                src="/asset/dish-1.jpg"
+                src="/asset/soup-3.jpg"
                 alt="Seafood"
                 className="w-full h-100 object-cover rounded-sm"
               />
@@ -111,7 +113,7 @@ export default function HomePage() {
                 className="w-full h-100 object-cover rounded-sm"
               />
               <img
-                src="/asset/dish-3.jpg"
+                src="/asset/drink-4.jpg"
                 alt="Restaurant interior"
                 className="hidden md:block w-full h-100 object-cover rounded-sm"
               />
