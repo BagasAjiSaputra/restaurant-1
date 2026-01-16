@@ -26,7 +26,6 @@ export default function LogoutButton() {
   return (
     <Button
       variant="destructive"
-      size="sm"
       onClick={handleLogout}
       className="flex items-center gap-2 bg-red-200 text-red-700 hover:text-white cursor-pointer"
     >

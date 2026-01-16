@@ -3,15 +3,22 @@ import { getMenu } from "@/actions/menu/read";
 import { UpdateMenu } from "./UpdateMenu";
 import { DeleteMenu } from "./DeleteMenu";
 import { DialogMenu } from "./AddMenu";
+import LogoutButton from "../Logout";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export default async function TableMenu() {
   const menus = await getMenu();
 
   return (
-    <div className="p-6">
+    <div className="p-6 mb-[100vh]">
       <div className="flex justify-between mb-3">
-        <h1 className="mb-4 text-xl font-semibold">Menu Restaurant</h1>
-      <DialogMenu />
+        {/* <h1 className="mb-4 text-xl font-semibold">MENU</h1> */}
+        <div className="flex gap-5">
+          <Button className="bg-green-300 text-green-800 hover:bg-green-400"><Link href={"/"}>Home</Link></Button>
+        <LogoutButton/>
+        </div>
+        <DialogMenu />
       </div>
 
       <div className="overflow-x-auto rounded-lg border">

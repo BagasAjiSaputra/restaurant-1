@@ -11,6 +11,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import MessageLottie from "@/components/loading/message/message";
 
 export default function ContactPage() {
   const [name, setName] = useState("");
@@ -71,12 +72,13 @@ ${reservation}
         <section>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mt-6">
             {/* LEFT */}
-            <div data-aos="fade-right">
+            <div data-aos="fade-right" className="flex items-center">
               <h1 className="text-5xl md:text-7xl font-extrabold leading-tight tracking-tight">
-                Let's <br className="hidden md:block" />
+                Let's <br />
                 Get In <br />
                 Touch !
               </h1>
+              <MessageLottie/>
             </div>
 
             {/* FORM */}
