@@ -10,6 +10,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import toast from "react-hot-toast";
 
 export function DeleteMenu({
   id,
@@ -18,6 +19,21 @@ export function DeleteMenu({
   id: string;
   image: string | null;
 }) {
+
+
+  const handleSubmit = async () => {
+    function sleep(ms: number) {
+      return new Promise((resolve) => setTimeout(resolve, ms));
+    }
+
+    try {
+      await sleep(1000);
+      toast.error('Menu Deleted');
+    } catch (err) {
+      toast.error('Failed Deleted Menu');
+    }
+  };
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -31,7 +47,7 @@ export function DeleteMenu({
           <DialogTitle>Delete Menu?</DialogTitle>
         </DialogHeader>
 
-        <form action={deleteMenu}>
+        <form action={deleteMenu} onSubmit={handleSubmit}>
           <input type="hidden" name="id" value={id} />
           <input type="hidden" name="image" value={image ?? ""} />
 

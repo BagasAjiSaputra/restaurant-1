@@ -4,6 +4,7 @@ import "./globals.css";
 import AOSProvider from "./providers/aos";
 import { Providers } from "./providers/Tanstack";
 import Footer from "@/components/footer/page";
+import { Toaster } from 'react-hot-toast';
 
 const googleSansFlex = Google_Sans_Flex({
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default function RootLayout({
         {children}
         <Footer />
         </Providers>
+        <Toaster position="top-right" />
       </body>
     </html>
   );

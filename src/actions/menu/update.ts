@@ -3,6 +3,7 @@
 
 import { supabaseServer } from "@/lib/supabase";
 import { redirect } from "next/navigation";
+import { toast } from 'react-hot-toast';
 
 export async function updateMenu(formData: FormData) {
   const supabase = await supabaseServer();
@@ -34,7 +35,7 @@ export async function updateMenu(formData: FormData) {
   const imageFile = formData.get("image") as File | null;
 
   if (!menuId || !title) {
-    throw new Error("ID dan title wajib diisi");
+    // throw new Error("ID dan title wajib diisi");
   }
 
   let imageUrl = formData.get("currentImage") as string;
@@ -56,7 +57,7 @@ export async function updateMenu(formData: FormData) {
       });
 
     if (uploadError) {
-      throw new Error(`Upload gagal: ${uploadError.message}`);
+      // throw new Error(`Upload gagal: ${uploadError.message}`);
     }
 
     const { data } = supabase.storage
@@ -79,8 +80,10 @@ export async function updateMenu(formData: FormData) {
     .eq("id", menuId)
     .eq("user_id", user.id);
 
+    
+
   if (error) {
-    throw new Error(error.message);
+    // throw new Error(error.message);
   }
 
   redirect("/dashboard");

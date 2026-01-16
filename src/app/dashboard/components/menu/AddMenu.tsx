@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import toast from "react-hot-toast";
 import { useState } from "react";
 
 const TAG_COLOR_MAP: Record<"Dish" | "Drink" | "Soup", string> = {
@@ -26,6 +27,19 @@ export function DialogMenu() {
 
   const color = TAG_COLOR_MAP[tag];
 
+  const handleSubmit = async () => {
+    function sleep(ms: number) {
+      return new Promise((resolve) => setTimeout(resolve, ms));
+    }
+
+    try {
+      await sleep(1000);
+      toast.success('Menu Created');
+    } catch (err) {
+      toast.error('Failed Created Menu');
+    }
+  };
+
 
   return (
     <Dialog>
@@ -38,6 +52,7 @@ export function DialogMenu() {
       <DialogContent className="sm:max-w-[500px]">
         <form
           action={createMenu}
+          onSubmit={handleSubmit}
           className="space-y-4"
         >
           <DialogHeader>

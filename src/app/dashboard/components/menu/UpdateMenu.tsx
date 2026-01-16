@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import toast from "react-hot-toast";
 
 /**
  * Mapping tag → color (SINGLE SOURCE OF TRUTH)
@@ -40,6 +41,20 @@ export function UpdateMenu({ menu }: { menu: Menu }) {
 
   const color = TAG_COLOR_MAP[tag ?? "Dish"];
 
+  const handleSubmit = async () => {
+
+    function sleep(ms: number) {
+      return new Promise((resolve) => setTimeout(resolve, ms));
+    }
+
+    try {
+      await sleep(1000);
+      toast.success('Menu Updated');
+    } catch (err) {
+      toast.error('Failed Updated Menu');
+    }
+  };
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -49,7 +64,7 @@ export function UpdateMenu({ menu }: { menu: Menu }) {
       </DialogTrigger>
 
       <DialogContent className="sm:max-w-[500px]">
-        <form action={updateMenu} className="space-y-4">
+        <form action={updateMenu} onSubmit={handleSubmit} className="space-y-4">
           <DialogHeader>
             <DialogTitle>Edit Menu</DialogTitle>
           </DialogHeader>
@@ -77,7 +92,7 @@ export function UpdateMenu({ menu }: { menu: Menu }) {
 
             <div>
               <Label>Description</Label>
-              <input name="desc" defaultValue={menu.desc ?? ""} className="w-full mt-2 border-b border-gray-300 py-2 text-sm focus:outline-none focus:border-black"/>
+              <input name="desc" defaultValue={menu.desc ?? ""} className="w-full mt-2 border-b border-gray-300 py-2 text-sm focus:outline-none focus:border-black" />
             </div>
 
             <div>
