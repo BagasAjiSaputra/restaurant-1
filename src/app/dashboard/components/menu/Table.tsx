@@ -15,7 +15,7 @@ export default async function TableMenu() {
       <div className="flex justify-between mb-3">
         {/* <h1 className="mb-4 text-xl font-semibold">MENU</h1> */}
         <div className="flex gap-5">
-          <Button className="bg-green-300 text-green-800 hover:bg-green-400"><Link href={"/"}>Home</Link></Button>
+          <Button className="bg-green-300 text-green-800 hover:bg-green-400"><Link href={"/menu"}>Menu</Link></Button>
         <LogoutButton/>
         </div>
         <DialogMenu />
