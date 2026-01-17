@@ -75,7 +75,7 @@ export default function Footer() {
                             </li> */}
                             <li>
                                 <Link
-                                    href="/reservation"
+                                    href="/contact"
                                     className="hover:text-white transition"
                                 >
                                     Reservation
