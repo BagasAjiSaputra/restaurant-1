@@ -12,7 +12,7 @@ export default function HomePage() {
 
       <Navbar />
 
-      <section className="min-h-screen flex flex-col overflow-hidden">
+      <section className="min-h-screen flex flex-col overflow-x-hidden">
 
         {/* Image Section */}
         <div data-aos="fade-up" className="px-6 md:px-10 xl:px-12 pb-10 py-4 md:py-8">
@@ -60,7 +60,7 @@ export default function HomePage() {
 
 
 
-      <section className="bg-[#f4f1ea] px-6 md:px-10 xl:px-12 py-16 overflow-hidden">
+      <section className="bg-[#f4f1ea] px-6 md:px-10 xl:px-12 py-16 overflow-x-hidden">
         {/* Top label */}
         <div data-aos="fade-up" className="flex justify-between items-center text-xs mb-6 text-neutral-600">
           <span>Northern atmosphere</span>
