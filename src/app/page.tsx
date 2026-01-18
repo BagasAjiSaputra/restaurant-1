@@ -1,11 +1,18 @@
 import Link from "next/link"
 import Navbar from "@/components/navbar/navbar"
 import PotatoLottie from "@/components/loading/potato/potato"
+import PageTransition from "@/components/templates/transition/PageTransition";
+import RectangleTransition from "@/components/templates/transition/RectangleTransition";
+import ClientWrapper from "@/components/templates/transition/Wrapper";
 
 export default function HomePage() {
 
   return (
     <>
+
+      <RectangleTransition />
+        <PageTransition>
+          <ClientWrapper>
       <div className="flex justify-center">
         <h1 data-aos="fade-up" className="text-[13vw] leading-none mt-2">FJORDSMAKEN</h1>
       </div>
@@ -121,6 +128,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+          </ClientWrapper>
+        </PageTransition>
     </>
   )
 }
